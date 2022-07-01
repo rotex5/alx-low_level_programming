@@ -8,30 +8,30 @@
  */
 int main(void)
 {
-	int i;
-        int single_digit; 
-        int double_digit;
+int i;
+int single_digit;
+int double_digit;
 
 
-	for (i = 0; i < 100; i++)
-	{
-		single_digit = i % 10;
-		double_digit = i / 10;
+for (i = 0; i < 100; i++)
+{
+single_digit = i % 10;
+double_digit = i / 10;
 
-		if (double_digit < single_digit)
-		{
-			putchar(double_digit + '0');
-			putchar(single_digit + '0');
+if (double_digit < single_digit)
+{
+putchar(double_digit + '0');
+putchar(single_digit + '0');
 
-			if (i < 89)
-			{
-				putchar(44);
-				putchar(32);
-			}
-		}
+if (i < 89)
+{
+putchar(44);
+putchar(32);
+}
+}
 
-	}
-	putchar('\n');
+}
+putchar('\n');
 
-	return (0);
+return (0);
 }
