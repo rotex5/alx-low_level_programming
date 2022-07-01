@@ -9,10 +9,10 @@
  */
 int main(void)
 {
-	int i, j;
-	int a, b, c, d;
-        
-        i = 0;
+int i, j;
+int a, b, c, d;
+
+i = 0;
 	while (i < 100)
 	{
 		a = i / 10; /* doubles fnum */
@@ -38,7 +38,7 @@ int main(void)
 				}
 			}
 		}
-                i++;
+i++;
 	}
 	putchar(10);
 
