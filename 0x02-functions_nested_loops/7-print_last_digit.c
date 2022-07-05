@@ -24,6 +24,6 @@ last_digit_of_num = num % 10;
 /**_putchar('0' + last_digit_of_num); **/
 }
 
-_putchar('0' + last_digit_of_num);
+_putchar('0' + (last_digit_of_num % 10));
 return (last_digit_of_num % 10);
 }
