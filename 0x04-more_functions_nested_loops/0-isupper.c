@@ -1,3 +1,9 @@
+/*
+ * File: 0-isupper.c
+ * Auth: rotex5
+ */
+
+
 #include "main.h"
 
 /**
