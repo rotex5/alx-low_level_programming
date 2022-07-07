@@ -28,6 +28,7 @@ else
 {
 return (0);
 }
+alpha ++;
 }
 return (0);
 }
