@@ -20,7 +20,7 @@ while (a < size)
 _putchar(35);
 a++;
 }
-if (i != size -1)
+if (i != size - 1)
 {
 _putchar('\n');
 }
