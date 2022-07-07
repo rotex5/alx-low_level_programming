@@ -15,12 +15,7 @@
 
 int _isupper(int c)
 {
-int alpha;
-
-alpha = 65;
-while (alpha <= 90)
-{
-if (c == alpha)
+if (c >= 'A' && c <= 'Z')
 {
 return (1);
 }
@@ -28,7 +23,4 @@ else
 {
 return (0);
 }
-alpha ++;
-}
-return (0);
 }
