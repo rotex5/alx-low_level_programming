@@ -9,12 +9,8 @@
 
 int _isdigit(int c)
 {
-int num;
 
-num = 48;
-while (num <= 57)
-{
-if (c == num)
+if (c >= 48 && c <= 57)
 {
 return (1);
 }
@@ -22,6 +18,5 @@ else
 {
 return (0);
 }
-}
-return (0);
+
 }
