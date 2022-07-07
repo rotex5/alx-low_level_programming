@@ -20,8 +20,11 @@ while (a < size)
 _putchar(35);
 a++;
 }
+if (i != size -1)
+{
 _putchar('\n');
+}
 i++;
 }
-/**_putchar('\n');**/
+_putchar('\n');
 }
