@@ -31,6 +31,6 @@ void print_number(int n)
 	while (count >= 1)
 	{
 		_putchar(((m / count) % 10) + 48);
-                count /= 10;
+count /= 10;
 	}
 }
