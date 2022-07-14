@@ -11,8 +11,9 @@ char *cap_string(char *str)
 	if (*(str + count) >= 97 && *(str + count) <= 122)
 	{
 		*(str + count) = *(str + count) - 32;
+		count++;
 	}
-	count++;
+	/**count++;**/
 
 	while (*(str + count) != '\0')
 	{
@@ -22,8 +23,10 @@ char *cap_string(char *str)
 			{
 
 				if ((*(str + (count + 1)) >= 97) && (*(str + (count + 1)) <= 122))
+				{
 					*(str + (count + 1)) = *(str + (count + 1)) - 32;
-				break;
+					break;
+				}
 			}
 		}
 		count++;
