@@ -1,6 +1,10 @@
 #include "main.h"
 
-
+/**
+ * cap_string - capitalizes first letters of a string
+ * @str: input string.
+ * Return: capitalzes first laters of a string
+ */
 
 
 char *cap_string(char *str)
