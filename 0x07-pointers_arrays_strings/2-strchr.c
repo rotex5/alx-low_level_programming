@@ -27,5 +27,5 @@ char *_strchr(char *s, char c)
 		return (s + counter);
 	}
 
-	return (s);
+	return ('\0');
 }
