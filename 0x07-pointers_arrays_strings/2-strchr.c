@@ -9,7 +9,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int counter;
+	 unsigned int counter;
 	char *current = s;
 
 	counter = 0;
@@ -20,13 +20,6 @@ char *_strchr(char *s, char c)
 			return (s + counter);
 		}
 
-
-		/**
-		 * else
-		{
-			return(NULL);
-		}
-		*/
 		counter++;
 	}
 
