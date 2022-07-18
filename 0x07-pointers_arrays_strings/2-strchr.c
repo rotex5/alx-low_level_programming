@@ -9,13 +9,12 @@
 
 char *_strchr(char *s, char c)
 {
-	 unsigned int counter;
-	char *current = s;
+	unsigned int counter;
 
 	counter = 0;
-	while (*(current + counter) != '\0')
+	while (*(s + counter) != '\0')
 	{
-		if (*(current + counter) == c)
+		if (*(s + counter) == c)
 		{
 			return (s + counter);
 		}
@@ -23,9 +22,9 @@ char *_strchr(char *s, char c)
 		counter++;
 	}
 
-	if (*(current + counter) == c)
+	if (*(s + counter) == c)
 	{
-		return (current + counter);
+		return (s + counter);
 	}
 
 	return (s);
