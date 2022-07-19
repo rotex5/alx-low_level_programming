@@ -24,11 +24,17 @@ unsigned int _strspn(char *s, char *accept)
 				num++;
 				break;
 			}
+			else if (*(accept + i + 1) == '\0')
+			{
+				return (num);
+			}
 		}
-		if (*(s + counter) != *(accept + i))
+		/**
+		 * if (*(s + counter) != *(accept + i))
 		{
 			break;
 		}
+		*/
 
 		counter++;
 	}
