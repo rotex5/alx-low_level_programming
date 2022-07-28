@@ -70,10 +70,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		else
 			*(ptr + i) = s2[j++];
 	}
-	ptr[i] = '\0';
 	}
 	else
 		return (NULL);
 
+	ptr[i] = '\0';
 	return (ptr);
 }
