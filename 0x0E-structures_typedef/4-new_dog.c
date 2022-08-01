@@ -14,6 +14,8 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
+	char *new_name = name;
+	char *new_owner = owner;
 
 	if (name == NULL || age == 0 || owner == NULL)
 		return (NULL);
@@ -22,9 +24,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ptr == NULL)
 		return (NULL);
 
-	ptr->name = name;
+	ptr->name = new_name;
 	(*ptr).age = age;
-	ptr->owner = owner;
+	ptr->owner = new_owner;
 
 	return (ptr);
 }
