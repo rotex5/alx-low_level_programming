@@ -37,13 +37,15 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 
 
-	for (; name_len > 0; name_len--)
-		*(new_name + name_len) = *(name + name_len);
-	*(new_name + name_len) = '\0';
+	for (i = 0; *(name + i) != '\0'; i++)
+		*(new_name + i) = *(name + i);
+	*(new_name + i) = '\0';
 
-	for (; owner_len > 0; owner_len--)
-		*(new_owner + owner_len) = *(owner + owner_len);
+
 	*(new_owner + owner_len) = '\0';
+	--owner_len;
+	for (; owner_len >= 0; owner_len--)
+		*(new_owner + owner_len) = *(owner + owner_len);
 
 	new_dog->age = age;
 	(*new_dog).name = new_name;
