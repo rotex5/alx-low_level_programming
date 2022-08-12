@@ -16,5 +16,5 @@ main:
 	int 0x080
 
 section .data
-	msg db "Hello, Holberton",0xA  ;0xA or 10 equates to newline
-	len equ $ -msg		   ;passing len of msg
+	msg db "Hello, Holberton",10   ;0xA or 10 equates to newline
+	len equ $ -msg		   	;passing len of msg
