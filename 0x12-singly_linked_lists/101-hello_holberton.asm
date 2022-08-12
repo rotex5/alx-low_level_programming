@@ -6,14 +6,12 @@
 section .text
 	global main
 main:
-	mov edx, len
-	mov ecx, msg
-	mov ebx, 1
-	mov eax, 4		;system call (sys_write)
-	int 0x80		;to call kernel
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, msg
+	mov rdx, len
+	syscall
 
-	mov eax, 1		;system call (sys_exit)
-	int 0x080
 
 section .data
 	msg db "Hello, Holberton",10   ;0xA or 10 equates to newline
