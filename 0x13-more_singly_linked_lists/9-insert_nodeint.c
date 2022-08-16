@@ -39,7 +39,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 				upper_next = cursor->next;
 				cursor->next = new_node;
 				new_node->next = upper_next;
-				return (cursor);
+				return (new_node);
 			}
 
 			count++;
