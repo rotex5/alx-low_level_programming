@@ -16,7 +16,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (cursor == NULL)
 		return (NULL);
-
+	/**
+	 *
 	while (cursor)
 	{
 		cursor =  cursor->next;
@@ -28,4 +29,15 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	}
 	return (cursor);
+	Issue with checker 9 and 10
+	*/
+
+	while (cursor)
+	{
+		if (count == index)
+			return (cursor);
+		count++;
+		cursor = cursor->next;
+	}
+	return (NULL);
 }
