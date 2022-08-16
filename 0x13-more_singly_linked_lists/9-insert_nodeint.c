@@ -31,7 +31,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	else
 	{
-		while (cursor->next)
+		while (cursor)
 		{
 
 			if ((count + 1) == idx)
