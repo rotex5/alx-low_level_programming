@@ -18,10 +18,6 @@ int main(int ac, char **av)
 	int src_fd = 0, dst_fd = 0;
 	char buffer[1024];
 	int tn_read = 0, tn_wrote = 0;
-	mode_t mode;
-
-	mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	/* or 0664 */
 
 	if (ac != 3)
 		dprintf(SE, "Usage: cp file_from file_to\n"), exit(97);
@@ -30,29 +26,33 @@ int main(int ac, char **av)
 	if (src_fd == -1)
 		dprintf(SE, "Error: Can't read from file %s\n", av[1]), exit(98);
 
-	dst_fd  = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	dst_fd  = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (dst_fd == -1)
 		dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 
 	do {
 		tn_read = read(src_fd, buffer, SIZE);
-		if (tn_read == -1)
-			dprintf(SE, "Error: Can't read from file %s\n", av[1]), exit(98);
+		if (tn_read < 0)
+		{
+			dprintf(SE, "Error: Can't read from file %s\n", av[1]);
+			exit(98);
+		}
 
 		if (tn_read > 0)
 		{
 			tn_wrote = write(dst_fd, buffer, tn_read);
-			if (tn_wrote == -1)
-				dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
+			if (tn_wrote < 0)
+			{
+				dprintf(SE, "Error: Can't write to %s\n", av[2]);
+				exit(99);
+			}
 		}
 	} while (tn_read > 0);
 	tn_read = close(src_fd);
-	if (tn_read == -1)
+	if (tn_read < 0)
 		dprintf(SE, "Error: Can't write to %d\n", src_fd), exit(100);
-
 	tn_wrote = close(dst_fd);
-	if (tn_wrote == -1)
+	if (tn_wrote < 0)
 		dprintf(SE, "Error: Can't write to %d\n", dst_fd), exit(100);
-
 	return (0);
 }
