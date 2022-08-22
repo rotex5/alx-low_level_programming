@@ -27,11 +27,11 @@ int main(int ac, char **av)
 		dprintf(SE, "Usage: cp file_from file_to\n"), exit(97);
 
 	src_fd = open(av[1], O_RDONLY);
-	if (src_fd < 0)
+	if (src_fd == -1)
 		dprintf(SE, "Error: Can't read from file %s\n", av[1]), exit(98);
 
-	dst_fd  = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
-	if (dst_fd < 0)
+	dst_fd  = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
+	if (dst_fd == -1)
 		dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 
 	do {
@@ -42,16 +42,16 @@ int main(int ac, char **av)
 		if (tn_read > 0)
 		{
 			tn_wrote = write(dst_fd, buffer, tn_read);
-			if (tn_wrote < 0)
+			if (tn_wrote == -1)
 				dprintf(SE, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	} while (tn_read > 0);
 	tn_read = close(src_fd);
-	if (tn_read < 0)
+	if (tn_read == -1)
 		dprintf(SE, "Error: Can't write to %d\n", src_fd), exit(100);
 
 	tn_wrote = close(dst_fd);
-	if (tn_wrote < 0)
+	if (tn_wrote == -1)
 		dprintf(SE, "Error: Can't write to %d\n", dst_fd), exit(100);
 
 	return (0);
