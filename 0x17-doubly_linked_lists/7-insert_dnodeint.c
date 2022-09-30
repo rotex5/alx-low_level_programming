@@ -14,15 +14,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new = NULL;
 	dlistint_t *cursor = *h, *rep;
 
+	new = malloc(sizeof(dlistint_t));
+	if (!new || !h)
+		return (NULL);
+	new->n = n;
+
 	if (idx == 0)
 		add_dnodeint(h, n);
 	else
 	{
-		new = malloc(sizeof(dlistint_t));
-		if (!new || !h)
-			return (NULL);
-		new->n = n;
-
 		while (count < (idx - 1))
 		{
 			rep = cursor, cursor = cursor->next;
