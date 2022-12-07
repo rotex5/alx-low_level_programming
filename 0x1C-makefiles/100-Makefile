@@ -6,16 +6,16 @@
 # Usage:
 # make -f all 100-Makefile        # compile all *.o files using *.c files created
 
+.PHONY: all clean oclean fclean re
+
 CC = gcc
 SRC = main.c school.c
 OBJ = ${SRC:%.c=%.o}
 NAME = school
-RM = rm
 CFLAGS = -Wall -Werror -Wextra -pedantic 
 
-.PHONY: all clean oclean fclean re
 
-all: ${OBJ} m.h
+all: m.h ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
 clean:
