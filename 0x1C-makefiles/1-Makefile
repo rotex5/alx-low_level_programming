@@ -1,0 +1,14 @@
+# -*- MakeFile -*-
+
+#target: dependencies
+#	action
+
+# Usage:
+# make -f 1-Makefile        # compile all *.c files
+
+CC = gcc
+SRC = $(wildcard *.c)
+
+all: school
+school:
+	${CC} ${SRC} -o school
